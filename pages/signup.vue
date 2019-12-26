@@ -23,7 +23,7 @@
                     </b-field>
 
                     <b-field label="Confirm">
-                        <b-input  maxlength="30" required v-model="confirmpassword"></b-input>
+                        <b-input  maxlength="30" type="password" required v-model="confirmpassword"></b-input>
                     </b-field>
 
                     <b-field>
@@ -66,6 +66,7 @@
 <script>
 import navbar from '../components/NavBar'
 import Swal from 'sweetalert2'
+import firebase from '../config/firebaseinit'
 export default {
     data(){
         return{
@@ -93,7 +94,21 @@ export default {
                             })
               }else
               {
-                  
+                
+                  firebase
+                  .auth()
+                  .createUserWithEmailAndPassword(this.email,this.password)
+                  .then(()=>{
+                     Swal.fire('Account Successfully Created').then(()=>{
+                         this.$router.push('/')
+                     })
+
+                  }).catch((err)=>{
+                      Swal.fire({
+                            icon: 'error',
+                            title: err.message
+                            })
+                      })
               }
             
         }

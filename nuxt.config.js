@@ -12,7 +12,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/png', href: '/static/favicon.png' },
+      { href:"https://fonts.googleapis.com/css?family=Ubuntu&display=swap", rel:"stylesheet" },
+      { rel:"stylesheet", href:"https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css"},
+      { rel:"stylesheet", href:"https://use.fontawesome.com/releases/v5.2.0/css/all.css"}
     ]
   },
   /*
@@ -40,6 +43,7 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
+    'nuxt-buefy'
   ],
   /*
   ** Build configuration

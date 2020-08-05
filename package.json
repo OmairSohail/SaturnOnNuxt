@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
     "cross-env": "^5.2.0",
-    "fastify": "^1.13.3",
+    "fastify": "^2.15.1",
     "firebase": "^7.6.1",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.19",
